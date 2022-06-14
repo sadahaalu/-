@@ -1,3 +1,33 @@
+### 一步到位
+```
+# Windows Command Prompt
+# Installation:
+cd <installation-path> # the project will be cloned to <installation-path>\blog\
+git clone https://gitee.com/caochenlei/blog
+cd .\blog\blog-server\
+mvn install
+cd ..\blog-manage\
+npm cache clear --force
+npm install --legacy-peer-deps
+cd ..\blog-front\
+npm cache clear --force
+npm install --legacy-peer-deps
+cd ..
+
+# Configure:
+application.yml中
+server.spring.datasource.username/password修改
+
+# Run:
+cd <installation-path>
+cd .\blog-server\
+start mvn spring-boot:run
+cd ..\blog-manage\
+start npm start
+cd ..\blog-front\
+start npm start
+```
+
 ### 前端项目文件结构  
 #### 前端项目运行方式
 Node.js安装目录下的node.exe  
